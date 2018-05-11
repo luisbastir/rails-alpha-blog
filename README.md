@@ -67,3 +67,17 @@ $ rake routes
 ```console
 $ rails s
 ```
+
+* Create table users, then create table Comments with a foreign key for user
+
+```console
+$ rails generate scaffold User username:string email:string
+$ rails generate scaffold Comment description:text user:references
+$ rails db:migrate
+```
+
+* If somehow you typed wrong, you can rollback the scaffold by typing:
+
+```console
+$ rails destroy scaffold Comment
+```
