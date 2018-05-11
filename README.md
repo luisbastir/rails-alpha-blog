@@ -23,37 +23,47 @@ Things you may want to cover:
 
 * ...
 
-
-# Methods used on terminal
+## Methods used on terminal
 
 * Create new rails app
-````
-> rails new rails-alpha-blog
-````
+
+```console
+$ rails new rails-alpha-blog
+```
 
 * Install Gem dependencies
-````
-> bundle instalss
-````
+
+```console
+$ bundle install
+```
 
 * Create table articles
-````
-> rails generate migration create_articles
-> rails db:migrate
-````
+
+```console
+$ rails generate migration create_articles
+$ rails db:migrate
+```
 
 * In any case we want to rollback
-````
-> rails db:rollback
-````
 
-* Rails console is the playground where you can test on development mode: for example: test validations on models.
-````
-> rails console
-````
+```console
+$ rails db:rollback
+```
+
+* Run rails console (app playground)
+
+```console
+$ rails console
+```
 
 * Show router paths and methods
-````
-> rake routes
-````
 
+```console
+$ rake routes
+```
+
+* Run server
+
+```console
+$ rails s
+```
