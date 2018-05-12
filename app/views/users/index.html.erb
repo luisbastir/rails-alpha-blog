@@ -7,7 +7,12 @@
     <div class="media col-md-4 offset-md-4 border border-primary pad">
       <%= link_to gravatar_for(user, size: 25, to_class: "mr-3"), user_path(user) %>
       <div class="media-body">
-        <h5 class="mt-0"><%= link_to user.username, user_path(user) %></h5>
+        <h5 class="mt-0">
+          <%= link_to user.username, user_path(user) %>
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to "Delete user", user_path(user), method: :destroy, class: "btn btn-danger btn-sm float-right", data: { confirm: "Are you sure you want to delete the user and all their articles?" } %>
+          <% end %>
+        </h5>
         <%= pluralize(user.articles.count, "article") if user.articles %>
       </div>
     </div>
