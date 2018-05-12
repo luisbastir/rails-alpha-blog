@@ -5,4 +5,9 @@
 </div>
 
 <h4 align="center" class="margin-top"><%= @user.username %>'s articles</h4>
-<%= render "articles/article", obj: @user.articles %>
+
+<%= will_paginate @user_articles, list_classes: %w(pagination justify-content-center) %>
+
+<%= render "articles/article", obj: @user_articles %>
+
+<%= will_paginate @user_articles, list_classes: %w(pagination justify-content-center) %>

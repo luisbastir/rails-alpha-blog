@@ -1,8 +1,10 @@
 <h1 align="center">All Alpha Bloggers</h1>
 
+<%= will_paginate @users, list_classes: %w(pagination justify-content-center) %>
+
 <% @users.each do |user| %>
   <div class="row margin-bottom">
-    <div class="media col-md-4 offset-md-4 border border-light pad">
+    <div class="media col-md-4 offset-md-4 border border-primary pad">
       <%= link_to gravatar_for(user, size: 25, to_class: "mr-3"), user_path(user) %>
       <div class="media-body">
         <h5 class="mt-0"><%= link_to user.username, user_path(user) %></h5>
@@ -11,3 +13,5 @@
     </div>
   </div>
 <% end %>
+
+<%= will_paginate @users, list_classes: %w(pagination justify-content-center) %>
