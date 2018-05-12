@@ -3,6 +3,8 @@
     <div class="card">
       <div class="card-header">
         <%= @article.title %>
+        <%= link_to @article.user.username, user_path(@article.user), class: "float-right" %>
+        <%= link_to gravatar_for(@article.user, size: 25, to_class: "mr-3"), user_path(@article.user), class: "float-right margin-right-sm" %>
       </div>
       <div class="card-body">
         <h5 class="card-title">Description:</h5>
