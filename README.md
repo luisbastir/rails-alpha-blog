@@ -81,3 +81,9 @@ $ rails db:migrate
 ```console
 $ rails destroy scaffold Comment
 ```
+
+* Run unit tests
+
+```console
+$ rails test
+```

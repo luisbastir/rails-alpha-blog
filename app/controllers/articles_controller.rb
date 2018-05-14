@@ -4,13 +4,11 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
   
   # GET /articles
-  # GET /articles.json
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
   end
   
   # GET /articles/1
-  # GET /articles/1.json
   def show
   end
 
@@ -24,7 +22,6 @@ class ArticlesController < ApplicationController
   end
 
   # POST /articles
-  # POST /articles.json
   def create
     @article = Article.new(article_params)
     @article.user = current_user
@@ -37,10 +34,9 @@ class ArticlesController < ApplicationController
   end
 
   # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
   def update
     if @article.update(article_params)
-      flash[:success] = "article was successfully updated"
+      flash[:success] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
       render 'edit'
@@ -48,7 +44,6 @@ class ArticlesController < ApplicationController
   end
 
   # DELETE /articles/1
-  # DELETE /articles/1.json
   def destroy
     @article.destroy
     flash[:danger] = "Article was successfully deleted"
@@ -66,6 +61,7 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :description)
     end
 
+    # Require user in session is the owner
     def require_same_user
       if current_user != @article.user && !current_user.admin?
         flash[:danger] = "You can only edit or delete your own articles"
