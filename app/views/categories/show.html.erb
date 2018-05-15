@@ -1,4 +1,9 @@
 <h1 align="center"><%= "Category: #{@category.name}"%></h1>
+<% if logged_in? and current_user.admin? %>
+  <p align="center">
+    <%= link_to "Edit category", edit_category_path(@category) %>
+  </p>
+<% end %>
 
 <%= will_paginate @category_articles, list_classes: %w(pagination justify-content-center) %>
 
