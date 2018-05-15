@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:edit, :update]
+  before_action :set_category, only: [:edit, :update, :show]
   before_action :require_admin, except: [:index, :show]
 
   # GET /categories
@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
+    @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /categories/new
