@@ -1,7 +1,13 @@
 <h1 align="center">Listing all categories</h1>
 
-<div class="list-group">
-  <% @categories.each do |category| %>
-    <%= link_to "#{category.name}", category_path(category), class: "list-group-item list-group-item-action" %>
-  <% end %>
+<%= will_paginate @categories, list_classes: %w(pagination justify-content-center) %>
+
+<div class="col-md-6 offset-md-3">
+  <div class="list-group">
+    <% @categories.each do |category| %>
+      <%= link_to "#{category.name}", category_path(category), class: "list-group-item list-group-item-action text-center" %>
+    <% end %>
+  </div>
 </div>
+
+<%= will_paginate @categories, list_classes: %w(pagination justify-content-center) %>
