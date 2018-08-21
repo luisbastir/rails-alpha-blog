@@ -7,6 +7,9 @@ db/*.sqlite3
 /log/*
 /tmp/*
 
+# Webpacker and React compiled files
+public/packs/*
+
 # various artifacts
 **.war
 *.rbc
