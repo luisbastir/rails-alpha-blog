@@ -1,6 +1,6 @@
 # Alpha Blog
 
-This is a demo app made with Ruby on Rails v 5 with React JS implemented. This project is based on a course by [evgeryrahman](https://github.com/evgenyrahman).
+This is a demo app made with Ruby on Rails v 5 with React JS implemented. This project is based on a course by [railsjavascriptcourse](https://github.com/railsjavascriptcourse).
 
 ## Author
 
